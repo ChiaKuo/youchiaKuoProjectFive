@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ea4fb529713decb4444420e7e4dea204",
+    "revision": "90cebbede617bebe1a30741abee08940",
     "url": "/youchiaKuoProjectFive/index.html"
   },
   {
-    "revision": "61d8d6399fadd07fc012",
-    "url": "/youchiaKuoProjectFive/static/css/main.67c38aa1.chunk.css"
+    "revision": "65d99052c3389b3cead7",
+    "url": "/youchiaKuoProjectFive/static/css/main.5ef8b27d.chunk.css"
   },
   {
     "revision": "dcb16c2f8c305c39813e",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/youchiaKuoProjectFive/static/js/2.16204f86.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "61d8d6399fadd07fc012",
-    "url": "/youchiaKuoProjectFive/static/js/main.54974b90.chunk.js"
+    "revision": "65d99052c3389b3cead7",
+    "url": "/youchiaKuoProjectFive/static/js/main.95ddc381.chunk.js"
   },
   {
     "revision": "77d52affe48f57ab4200",
