@@ -5,7 +5,8 @@ import title from './assets/pokemonTitle.png'; // generated from https://textcra
 class Start extends Component {
     render() {
         return (
-            <div className="startBox">
+            // Start Page
+            <div className="startBox wrapper">
                 <img className="startImage" src={title} alt="pokemon forest"/>
                 <h2>Catch up to 151 Pokemon!</h2>
             </div>

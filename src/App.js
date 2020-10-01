@@ -13,7 +13,6 @@ class App extends Component {
       pokemon: [],
       pokemonPicture: [],
       team: [],
-      yourPc: [],
       startVisible: true,
       teamVisible: false,
       pokemonVisible: false,
@@ -27,6 +26,7 @@ class App extends Component {
     this.fetchPokemon();
   }
 
+  // Function to determine if a Pokemon is caught. Places the caught Pokemon info into the Team array
   catchPokemon = () => {
     const number = Math.floor(Math.random() * 100) + 1;
     if (this.state.team.length > 5) {
@@ -56,9 +56,9 @@ class App extends Component {
     }
   }
   
+  // Function to randomly generate a wild Pokemon
   fetchPokemon = () => {
     const number = Math.floor(Math.random() * 151) + 1;
-
     axios({
       url: 'https://pokeapi.co/api/v2/pokemon/' + number,
       method: 'GET',
@@ -81,6 +81,7 @@ class App extends Component {
     })
   }
 
+  // Function to generate another Pokemon
   morePokemon = () => {
     this.setState({
       caught: false,
@@ -89,6 +90,7 @@ class App extends Component {
     this.fetchPokemon();
   }
 
+  // Function to return to the Pokemon page from the Team page
   returnPokemon = () => {
     this.setState({ 
       pokemonVisible: true,
@@ -96,6 +98,7 @@ class App extends Component {
     });
   }
 
+  // Function to determine which page is shown
   handlePage = (page) => {
     if (page === "start") {
       this.setState({ 
@@ -115,6 +118,7 @@ class App extends Component {
     }
   }
 
+  // Function to release a pokemon from the team page
   releasePokemon = (removeIndex) => {
     const oldTeam = [...this.state.team];
     const newTeam = oldTeam.filter((_, index) => {
@@ -129,6 +133,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        
         {/* Start Screen */}
         {this.state.startVisible ? 
           <Start /> 
@@ -146,7 +151,7 @@ class App extends Component {
             missed={this.state.missed} 
             full={this.state.full} /> 
           : 
-          null }
+          null}
 
         {/* Team Screen */}
         {this.state.teamVisible ? 
@@ -165,22 +170,25 @@ class App extends Component {
           })} 
           return={() => {this.handlePage("return");}} /> 
         : 
-          null}
+        null}
         
         <div className="startAndTeam">
           {/* Start Button */}
           {this.state.startVisible ?
             <button onClick = {() => this.handlePage("start")}>Click here to start</button>
           :
-            null}
+          null}
 
           {/* Team Button */}
           {this.state.teamVisible !== true && this.state.pokemonVisible ?
             <button className="teamButton" onClick = {() => this.handlePage("team")}>Team</button>
           :
-            null}
+          null}
         </div>
-        <footer><p>Created by Jason Kuo at<a href="https://junocollege.com/" >Juno College</a></p></footer>    
+
+        {/* Footer */}
+        <footer><p>Created by Jason Kuo at<a href="https://junocollege.com/" >Juno College</a></p></footer>
+
       </div>
     );
   }
